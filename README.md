@@ -1,3 +1,7 @@
 # Nextcloud-on-Linux
 
-Einleitung:
+### Einleitung:
+
+Willkommen zu unserem Schulprojekt im Modul 239 (Internetserver in Betrieb nehmen), in dem wir eine Nextcloud-Umgebung in Linux aufbauen! Das Projekt wird mit Robin Kraft und Samuel Nick durchgeführt. Nextcloud ist eine beliebte Cloud-Speicherlösung, die uns ermöglicht, Dateien sicher auszutauschen und zu speichern. In diesem Projekt werden wir unsere Linux-Kenntnisse erweitern, indem wir eine Nextcloud-Instanz aufsetzen und konfigurieren. Dabei lernen wir wichtige Aspekte wie die Auswahl der Linux-Distribution, die Installation von Webservern und Datenbanken sowie die Benutzerverwaltung und das Datei-Sharing. 
+
+## Anleitung:
