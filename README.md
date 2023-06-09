@@ -14,3 +14,13 @@ Willkommen zu unserem Schulprojekt im Modul 239 (Internetserver in Betrieb nehme
 
 Vorrausgesetzt sind alle oben aufgeführten Clients komplett installiert und im selben Netz.
 
+Also man öffnet das Terminal.
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/9a981979-d346-47aa-8e15-e85f48b0a6b9)
+
+Text
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/d6b91119-1210-4e6c-931d-6748fa8728cf)
+
+Text
+
