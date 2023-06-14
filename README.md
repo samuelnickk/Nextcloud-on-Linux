@@ -14,13 +14,74 @@ Willkommen zu unserem Schulprojekt im Modul 239 (Internetserver in Betrieb nehme
 
 Vorrausgesetzt sind alle oben aufgeführten Clients komplett installiert und im selben Netz.
 
-Also man öffnet das Terminal.
+Als erstes führt man den Befehl "sudo apt-get update" aus, um sicherzustellen das die neusten Updates installiert werden.
 
-![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/9a981979-d346-47aa-8e15-e85f48b0a6b9)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/3477f769-fdb8-40dd-a8b0-5b0c6958379b)
+
+Mit dem Befehl "ifconfig" können wir die aktuelle IP-Adresse herausfinden.
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/f2564de8-06b3-49ad-8511-3235d6f70814)
+
+Danach tragen wir eine statische IP-Adresse im IP-Range ein sowie den DNS-Server von Google (8.8.8.8).
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/efda2cd0-e044-43e4-8851-464cd7bd9c2d)
+
+Nun kann man  das Terminal öffnen.
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/4a81e710-0b6d-4004-91e8-7de90d8ba3a9)
+
+Danach kann man die Installation von Nextcloud mit "sudo snap install nextcloud" starten. Dies erfordert das Passwort von einem Admin (alpha).
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/38458dda-86c3-450e-9751-dbf3a38a657f)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/03723eef-b741-4375-92ae-cb6101343ef5)
+
+Zusätzlich muss noch ...
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/358fba5a-f898-4d84-9242-9d741e929fa0)
+
+Anschliessend überprüfen wir mit dem Befehl "sudo nextcloud.occ config:system:get trusted_domains" von wo aus eine Verbindung möglich ist.
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/86505973-3a4a-4bef-a743-b8b2b436639d)
+
+Hier fügen wir dann eine neue Verbindung hinzu und überprüfen diese am Schluss wieder mit "sudo nextcloud.occ config:system:get trusted_domains".
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1379eff9-88f6-4863-968f-6465c1888759)
+
+Im Anschluss richten wir ein SSL-Zertifikat mit "sudo nextcloud.enable-https self-signed" ein.
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/d68a6567-a937-4fdc-b9be-c137ae7bc229)
+
+Damit nun die Verbindungen möglich sind, müssen wir die TCP-Ports 80 & 443 auf der Firewall erlauben. Dazu nutzen wir den Befehl "sudo ufw allow 80,443/tcp".
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/206bf00d-a09f-4dd1-8aab-f7c8285a2003)
+
+### Anmeldung auf Windows
+
+Nun haben wir Nextcloud eingerichtet. Jetzt können wir dies auf dem Windows-Client ausprobieren. Dazu öffnen wir einen Browser und gibt die IP-Adresse vom Linux-Client ein. In unserem Beispiel https://192.168.0.5.
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/fee2557b-d3d4-47a8-ae83-48074b1d6ecb)
+
+Nun kann man sich mit dem Linux-User anmelden:
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1dab9774-30d1-48f2-9e3a-d720a448d948)
+
+Jetzt ist man angemeldet und 
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/9f4af6d3-8722-42e8-8c8e-fae916514436)
+
+
+### Anmeldung auf Linux
+
+Als Vorbereitung öffnet man das Terminal und führt den Befehl  "sudo nano /etc/hosts".
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/0239d633-f5c1-4966-bf42-200aecdac2a0)
 
 Text
 
-![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/d6b91119-1210-4e6c-931d-6748fa8728cf)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/647e3756-26ad-4bcf-acd4-bcf1a58b399f)
 
-Text
+Danach können wir den Speicher unter der obigen eingegebenen Adresse erreichen (nextcloud.kranic.com). Hier wird dann wieder das selbe Login benötig wie auf Windows.
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/daa8b3e8-a4b5-45bb-9f4b-b34fe089eeb3)
+
 
