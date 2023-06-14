@@ -84,4 +84,11 @@ Danach können wir den Speicher unter der obigen eingegebenen Adresse erreichen 
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/daa8b3e8-a4b5-45bb-9f4b-b34fe089eeb3)
 
+Text
+
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/fdbd2118-2855-4a88-8367-ba072a80e949)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1758419d-22f3-4907-98f0-753051e8952d)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/6325486d-3302-4818-a32e-0460812ff96a)
+
+
 
