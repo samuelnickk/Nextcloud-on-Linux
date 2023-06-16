@@ -12,7 +12,8 @@ Willkommen zu unserem Schulprojekt im Modul 239 (Internetserver in Betrieb nehme
 
 ### Unser Vorgehen:
 
-#### Konfiguration Netzwerk
+
+#### Konfiguration Netzwerk:
 
 Vorrausgesetzt sind alle oben aufgeführten Clients komplett installiert und im selben Netz.
 
@@ -28,7 +29,7 @@ Danach tragen wir eine statische IP-Adresse im IP-Range ein sowie den DNS-Server
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/efda2cd0-e044-43e4-8851-464cd7bd9c2d)
 
-#### Installation NextCloud
+#### Installation NextCloud:
 
 Nun kann man  das Terminal öffnen.
 
@@ -45,7 +46,7 @@ Um Nextcloud mit einem neuen Administrator-Account zu konfigurieren, verwende de
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/183c322d-b787-486a-95b6-02f5369c7ada)
 
-#### Whitelisten von Domains oder IP-Adressen
+#### Whitelisten von Domains oder IP-Adressen:
 
 Anschliessend überprüfen wir mit dem Befehl "sudo nextcloud.occ config:system:get trusted_domains" von wo aus eine Verbindung möglich ist.
 In unserem Fall wäre das der localhost.
@@ -58,7 +59,7 @@ Wir fügen den folgenden IP-Range 192.168.0.* hinzu, damit alle Computer in dies
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1379eff9-88f6-4863-968f-6465c1888759)
 
-#### Zertifikat einrichten
+#### Zertifikat einrichten:
 
 Im Anschluss richten wir ein SSL-Zertifikat mit "sudo nextcloud.enable-https self-signed" ein.
 
@@ -70,7 +71,7 @@ Damit nun die Verbindungen möglich sind, müssen wir die TCP-Ports 80 & 443 auf
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/206bf00d-a09f-4dd1-8aab-f7c8285a2003)
 
-### Anmeldung auf Windows
+### Anmeldung auf Windows:
 
 Nun haben wir Nextcloud eingerichtet. Jetzt können wir dies auf dem Windows-Client ausprobieren. Dazu öffnen wir einen Browser und gibt die IP-Adresse vom Linux-Client ein. In unserem Beispiel https://192.168.0.5.
 
@@ -85,9 +86,9 @@ Jetzt ist man angemeldet und kann seine Daten hochladen und verfügbar machen.
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/9f4af6d3-8722-42e8-8c8e-fae916514436)
 
 
-### Anmeldung auf Linux
+### Anmeldung auf Linux:
 
-#### Freiwillig: Zugriff über Domainnamen
+#### Freiwillig: Zugriff über Domainnamen:
 
 Das Terminal öffnen und den Befehl sudo nano /etc/hosts eingeben, um das Hostfile zu bearbeiten.
 
@@ -106,14 +107,11 @@ Wie Sie sehen können, haben wir die gleiche Benutzeroberfläche wie auf Windows
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/fdbd2118-2855-4a88-8367-ba072a80e949)
 
-### Test
+### Test:
 Wir laden nun eine Datei vom Windows Client auf unseeren NextCloud Speicher und möchten schauen, ob dieser ebenfalls im Linux System verfügbar ist. In unserem Fall ist es das Bild Testbild.jpg
 
-#### Windows
+#### Windows:
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1758419d-22f3-4907-98f0-753051e8952d)
 
-#### Linux
+#### Linux:
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/6325486d-3302-4818-a32e-0460812ff96a)
-
-
-
