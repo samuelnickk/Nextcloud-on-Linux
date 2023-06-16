@@ -1,14 +1,17 @@
-# Nextcloud-on-Linux
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/192c8aa2-710f-4493-9fc4-967b8b1d7c4b)# Nextcloud-on-Linux
 
 ### Einleitung:
 
 Willkommen zu unserem Schulprojekt im Modul 239 (Internetserver in Betrieb nehmen), in dem wir eine Nextcloud-Umgebung in Linux aufbauen! Das Projekt wird mit Robin Kraft und Samuel Nick durchgeführt. Nextcloud ist eine beliebte Cloud-Speicherlösung, die uns ermöglicht, Dateien sicher auszutauschen und zu speichern. In diesem Projekt werden wir unsere Linux-Kenntnisse erweitern, indem wir eine Nextcloud-Instanz aufsetzen und konfigurieren. Dabei lernen wir wichtige Aspekte wie die Auswahl der Linux-Distribution, die Installation von Webservern und Datenbanken sowie die Benutzerverwaltung und das Datei-Sharing. 
+
+---
 
 ### Was wird alles benötigt?
 
 - 2x Ubuntu Clients (ubuntu-22.04.2 - grafische Oberfläche)
 - Windows Client
 
+---
 
 ### Unser Vorgehen:
 
@@ -29,6 +32,8 @@ Danach tragen wir eine statische IP-Adresse im IP-Range ein sowie den DNS-Server
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/efda2cd0-e044-43e4-8851-464cd7bd9c2d)
 
+---
+
 #### Installation NextCloud:
 
 Nun kann man  das Terminal öffnen.
@@ -46,6 +51,8 @@ Um Nextcloud mit einem neuen Administrator-Account zu konfigurieren, verwende de
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/183c322d-b787-486a-95b6-02f5369c7ada)
 
+---
+
 #### Whitelisten von Domains oder IP-Adressen:
 
 Anschliessend überprüfen wir mit dem Befehl "sudo nextcloud.occ config:system:get trusted_domains" von wo aus eine Verbindung möglich ist.
@@ -59,6 +66,8 @@ Wir fügen den folgenden IP-Range 192.168.0.* hinzu, damit alle Computer in dies
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1379eff9-88f6-4863-968f-6465c1888759)
 
+---
+
 #### Zertifikat einrichten:
 
 Im Anschluss richten wir ein SSL-Zertifikat mit "sudo nextcloud.enable-https self-signed" ein.
@@ -70,6 +79,8 @@ Da es kein verifiziertes Zertifikat ist, werden wir eine Zertifaktsmeldung erhal
 Damit nun die Verbindungen möglich sind, müssen wir die TCP-Ports 80 & 443 auf der Firewall erlauben. Dazu nutzen wir den Befehl "sudo ufw allow 80,443/tcp".
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/206bf00d-a09f-4dd1-8aab-f7c8285a2003)
+
+---
 
 ### Anmeldung auf Windows:
 
@@ -85,10 +96,11 @@ Jetzt ist man angemeldet und kann seine Daten hochladen und verfügbar machen.
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/9f4af6d3-8722-42e8-8c8e-fae916514436)
 
+---
 
 ### Anmeldung auf Linux:
 
-#### Freiwillig: Zugriff über Domainnamen:
+**Freiwillig:** Zugriff über Domainnamen
 
 Das Terminal öffnen und den Befehl sudo nano /etc/hosts eingeben, um das Hostfile zu bearbeiten.
 
@@ -106,6 +118,8 @@ Danach können wir den Speicher unter der obigen eingegebenen Adresse erreichen 
 Wie Sie sehen können, haben wir die gleiche Benutzeroberfläche wie auf Windows.
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/fdbd2118-2855-4a88-8367-ba072a80e949)
+
+---
 
 ### Test:
 Wir laden nun eine Datei vom Windows Client auf unseeren NextCloud Speicher und möchten schauen, ob dieser ebenfalls im Linux System verfügbar ist. In unserem Fall ist es das Bild Testbild.jpg
