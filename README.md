@@ -35,9 +35,9 @@ Danach kann man die Installation von Nextcloud mit "sudo snap install nextcloud"
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/38458dda-86c3-450e-9751-dbf3a38a657f)
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/03723eef-b741-4375-92ae-cb6101343ef5)
 
-Zusätzlich muss noch ...
+Zus
 
-![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/358fba5a-f898-4d84-9242-9d741e929fa0)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/183c322d-b787-486a-95b6-02f5369c7ada)
 
 Anschliessend überprüfen wir mit dem Befehl "sudo nextcloud.occ config:system:get trusted_domains" von wo aus eine Verbindung möglich ist.
 
