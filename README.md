@@ -1,4 +1,3 @@
-![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/192c8aa2-710f-4493-9fc4-967b8b1d7c4b)# Nextcloud-on-Linux
 
 ### Einleitung:
 
