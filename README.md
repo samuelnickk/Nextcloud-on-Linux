@@ -35,19 +35,26 @@ Danach kann man die Installation von Nextcloud mit "sudo snap install nextcloud"
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/38458dda-86c3-450e-9751-dbf3a38a657f)
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/03723eef-b741-4375-92ae-cb6101343ef5)
 
-Zus
+Es gibt verschiedene Möglichkeiten, wie man den Nextcloud-Snap konfigurieren kann. In dieser Anleitung werden wir jedoch keinen Administrator-Benutzer über die Web-Oberfläche erstellen, sondern dies über die Befehlszeile tun, um ein kleines Zeitfenster zu vermeiden, in dem die Administrationsseite für jeden zugänglich wäre, der die IP-Adresse oder den Domainnamen deines Servers besucht. 
+
+Um Nextcloud mit einem neuen Administrator-Account zu konfigurieren, verwende den Befehl "nextcloud.manual-install". Du musst Benutzernamen und Passwort als Argumente übergeben. Nun wird mit dem Befehl sudo nextcloud.manualinstall "user" "password"
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/183c322d-b787-486a-95b6-02f5369c7ada)
 
 Anschliessend überprüfen wir mit dem Befehl "sudo nextcloud.occ config:system:get trusted_domains" von wo aus eine Verbindung möglich ist.
+In unserem Fall wäre das der localhost.
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/86505973-3a4a-4bef-a743-b8b2b436639d)
 
 Hier fügen wir dann eine neue Verbindung hinzu und überprüfen diese am Schluss wieder mit "sudo nextcloud.occ config:system:get trusted_domains".
 
+Wir fügen den folgenden IP-Range 192.168.0.* hinzu, damit alle Computer in diesem Range zugreifen können. Ebenfalls definieren wir eine Domain, damit der Ubuntu-Client über den Domainnamen zugreifen kann. (nextcloud.kranic.com)
+
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1379eff9-88f6-4863-968f-6465c1888759)
 
 Im Anschluss richten wir ein SSL-Zertifikat mit "sudo nextcloud.enable-https self-signed" ein.
+
+Da es kein verifiziertes Zertifikat ist, werden wir eine Zertifaktsmeldung erhalten, wenn wir auf Nextcloud zugreifen möchten. Dies kann jedoch ignoriert werden. 
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/d68a6567-a937-4fdc-b9be-c137ae7bc229)
 
@@ -61,33 +68,43 @@ Nun haben wir Nextcloud eingerichtet. Jetzt können wir dies auf dem Windows-Cli
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/fee2557b-d3d4-47a8-ae83-48074b1d6ecb)
 
-Nun kann man sich mit dem Linux-User anmelden:
+Nun kann man sich mit dem erstellten User (alpha) anmelden:
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1dab9774-30d1-48f2-9e3a-d720a448d948)
 
-Jetzt ist man angemeldet und 
+Jetzt ist man angemeldet und kann seine Daten hochladen und verfügbar machen. 
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/9f4af6d3-8722-42e8-8c8e-fae916514436)
 
 
 ### Anmeldung auf Linux
 
-Als Vorbereitung öffnet man das Terminal und führt den Befehl  "sudo nano /etc/hosts".
+#### Freiwillig: Zugriff über Domainnamen
+
+Das Terminal öffnen und den Befehl sudo nano /etc/hosts eingeben, um das Hostfile zu bearbeiten.
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/0239d633-f5c1-4966-bf42-200aecdac2a0)
 
-Text
+An dieser Stelle fügen wir die IP-Adresse des Nextcloud-Servers ein und den gewünschten Domänennamen. Es muss jedoch beachtet werden, dass der Zugriff nur erlaubt wird, wenn die sich die Domain auf der Whitelist befindet. In unserem Fall wäre das die Domäne: nextcloud.kranic.com
 
-![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/647e3756-26ad-4bcf-acd4-bcf1a58b399f)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/184deca7-c582-44b8-9a7d-03486e4e1679)
 
-Danach können wir den Speicher unter der obigen eingegebenen Adresse erreichen (nextcloud.kranic.com). Hier wird dann wieder das selbe Login benötig wie auf Windows.
+
+Danach können wir den Speicher unter der obigen eingegebenen Adresse erreichen (nextcloud.kranic.com). Hier wird dann wieder das selbe Login benötigt wie auf Windows.
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/daa8b3e8-a4b5-45bb-9f4b-b34fe089eeb3)
 
-Text
+Wie Sie sehen können, haben wir die gleiche Benutzeroberfläche wie auf Windows.
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/fdbd2118-2855-4a88-8367-ba072a80e949)
+
+### Test
+Wir laden nun eine Datei vom Windows Client auf unseeren NextCloud Speicher und möchten schauen, ob dieser ebenfalls im Linux System verfügbar ist. In unserem Fall ist es das Bild Testbild.jpg
+
+#### Windows
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1758419d-22f3-4907-98f0-753051e8952d)
+
+#### Linux
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/6325486d-3302-4818-a32e-0460812ff96a)
 
 
