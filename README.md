@@ -12,6 +12,8 @@ Willkommen zu unserem Schulprojekt im Modul 239 (Internetserver in Betrieb nehme
 
 ### Unser Vorgehen:
 
+#### Konfiguration Netzwerk
+
 Vorrausgesetzt sind alle oben aufgeführten Clients komplett installiert und im selben Netz.
 
 Als erstes führt man den Befehl "sudo apt-get update" aus, um sicherzustellen das die neusten Updates installiert werden.
@@ -25,6 +27,8 @@ Mit dem Befehl "ifconfig" können wir die aktuelle IP-Adresse herausfinden.
 Danach tragen wir eine statische IP-Adresse im IP-Range ein sowie den DNS-Server von Google (8.8.8.8).
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/efda2cd0-e044-43e4-8851-464cd7bd9c2d)
+
+#### Installation NextCloud
 
 Nun kann man  das Terminal öffnen.
 
@@ -41,6 +45,8 @@ Um Nextcloud mit einem neuen Administrator-Account zu konfigurieren, verwende de
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/183c322d-b787-486a-95b6-02f5369c7ada)
 
+#### Whitelisten von Domains oder IP-Adressen
+
 Anschliessend überprüfen wir mit dem Befehl "sudo nextcloud.occ config:system:get trusted_domains" von wo aus eine Verbindung möglich ist.
 In unserem Fall wäre das der localhost.
 
@@ -51,6 +57,8 @@ Hier fügen wir dann eine neue Verbindung hinzu und überprüfen diese am Schlus
 Wir fügen den folgenden IP-Range 192.168.0.* hinzu, damit alle Computer in diesem Range zugreifen können. Ebenfalls definieren wir eine Domain, damit der Ubuntu-Client über den Domainnamen zugreifen kann. (nextcloud.kranic.com)
 
 ![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/1379eff9-88f6-4863-968f-6465c1888759)
+
+#### Zertifikat einrichten
 
 Im Anschluss richten wir ein SSL-Zertifikat mit "sudo nextcloud.enable-https self-signed" ein.
 
