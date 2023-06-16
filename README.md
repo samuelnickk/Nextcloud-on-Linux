@@ -112,7 +112,7 @@ An dieser Stelle fügen wir die IP-Adresse des Nextcloud-Servers ein und den gew
 
 Danach können wir den Speicher unter der obigen eingegebenen Adresse erreichen (nextcloud.kranic.com). Hier wird dann wieder das selbe Login benötigt wie auf Windows.
 
-![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/daa8b3e8-a4b5-45bb-9f4b-b34fe089eeb3)
+![image](https://github.com/samuelnickk/Nextcloud-on-Linux/assets/132668785/5efc60c0-c7cf-4433-856a-ec1ba9f8d72c)
 
 Wie Sie sehen können, haben wir die gleiche Benutzeroberfläche wie auf Windows.
 
